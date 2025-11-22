@@ -13,3 +13,4 @@ The NootedRed project is Copyright © 2022-2025 ChefKiss. The NootedRed project 
 > This project is under active research and development; There will be crashes here and there, but is generally smooth.
 >
 > See repository issues and [our site](https://chefkiss.dev/applehax/nootedred) for more information.
+> This is a message from the forker: NOTE that i only tested for the R5 7535hs and, i dont know if any other igpu works for this. Remember, ONLY TESTED ON 660M
