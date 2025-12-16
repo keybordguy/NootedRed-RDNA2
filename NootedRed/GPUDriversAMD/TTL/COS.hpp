@@ -1,4 +1,4 @@
-// AMD COS
+// AMD TTL COS
 //
 // Copyright © 2024-2025 ChefKiss. Licensed under the Thou Shalt Not Profit License version 1.5.
 // See LICENSE for details.
@@ -15,4 +15,9 @@ struct CosReadConfigurationSettingInput {
 
 struct CosReadConfigurationSettingOutput {
     UInt32 settingLen;
+};
+
+enum COSResult {
+    kCOSResultOK = 0,
+    kCOSResultUnsupported = 2,
 };

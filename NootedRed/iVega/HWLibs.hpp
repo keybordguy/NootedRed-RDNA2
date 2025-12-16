@@ -6,10 +6,11 @@
 #pragma once
 #include <GPUDriversAMD/CAIL/DeviceType.hpp>
 #include <GPUDriversAMD/CAIL/Result.hpp>
-#include <GPUDriversAMD/CAIL/SWIP/DMCU.hpp>
-#include <GPUDriversAMD/CAIL/SWIP/GC.hpp>
-#include <GPUDriversAMD/CAIL/SWIP/IPVersion.hpp>
-#include <GPUDriversAMD/CAIL/SWIP/SDMA.hpp>
+#include <GPUDriversAMD/TTL/Event.hpp>
+#include <GPUDriversAMD/TTL/SWIP/DMCU.hpp>
+#include <GPUDriversAMD/TTL/SWIP/GC.hpp>
+#include <GPUDriversAMD/TTL/SWIP/IPVersion.hpp>
+#include <GPUDriversAMD/TTL/SWIP/SDMA.hpp>
 #include <Headers/kern_patcher.hpp>
 #include <Headers/kern_util.hpp>
 #include <PenguinWizardry/ObjectField.hpp>
@@ -56,9 +57,9 @@ namespace iVega {
         private:
         static void wrapPopulateFirmwareDirectory(void *self);
         static bool wrapGetIpFw(void *self, UInt32 ipVersion, const char *name, void *out);
-        static CAILResult cailGeneralFailure();
-        static CAILResult cailUnsupported();
-        static CAILResult cailNoop();
+        static CAILResult pspIsSosRunning();
+        static CAILResult retUnsupported();
+        static CAILResult retOK();
         static CAILResult pspBootloaderLoadSos10(void *instance);
         static CAILResult pspSecurityFeatureCapsSet10(void *instance);
         static CAILResult pspSecurityFeatureCapsSet12(void *instance);
@@ -67,12 +68,13 @@ namespace iVega {
         static CAILResult smuPowerUp();
         static CAILResult smuInternalSwInit(void *instance);
         static CAILResult smu10InternalHwInit(void *instance);
+        static CAILResult smu12WaitForFwLoaded();
         static CAILResult smu12InternalHwInit(void *instance);
         static CAILResult smuInternalHwExit(void *instance);
         static CAILResult smuFullAsicReset(void *instance, void *data);
-        static CAILResult smu10NotifyEvent(void *instance, void *data);
-        static CAILResult smu12NotifyEvent(void *instance, void *data);
-        static CAILResult smuFullScreenEvent(void *instance, UInt32 event);
+        static CAILResult smu10NotifyEvent(void *instance, TTLEventInput *input);
+        static CAILResult smu12NotifyEvent(void *instance, TTLEventInput *input);
+        static CAILResult smuFullScreenEvent(void *instance, TTLFullScreenEvent event);
         static CAILResult wrapSmuInitFunctionPointerList(void *instance, SWIPIPVersion ipVersion);
         static void gc91GetFwConstants(void *instance, GCFirmwareInfo *fwData);
         static void gc92GetFwConstants(void *instance, GCFirmwareInfo *fwData);

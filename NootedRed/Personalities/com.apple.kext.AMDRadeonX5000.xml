@@ -2,8 +2,8 @@
 	<dict>
 		<key>CFBundleIdentifier</key>
 		<string>com.apple.kext.AMDRadeonX5000</string>
-		<key>GPUDCCDisplayable</key>
-		<false/>
+		<key>GPUTaskSingleChannel</key>
+		<true/>
 		<key>GPUDebugNullClientMask</key>
 		<integer>0</integer>
 		<key>GpuDebugPolicy</key>
@@ -77,8 +77,6 @@
 		<string>IOAccelerator</string>
 		<key>IOPCIMatch</key>
 		<string>0x15DD1002</string>
-		<key>IOPCITunnelCompatible</key>
-		<true/>
 		<key>IOPropertyMatch</key>
 		<dict>
 			<key>LoadAccelerator</key>
@@ -92,14 +90,16 @@
 		<integer>16908288</integer>
 		<key>SWIP_properties</key>
 		<dict>
-			<key>EnableSwVCNFWLoading</key>
-			<integer>0</integer>
 			<key>EnableVCNDPG</key>
 			<integer>0</integer>
 			<key>EnableswGcFwLoading</key>
 			<integer>0</integer>
 			<key>EnableswSdmaFwLoading</key>
 			<integer>0</integer>
+			<key>EnableSwVCNFWLoading</key>
+			<integer>0</integer>
+			<key>SMU_DisableMmhubPowerGating</key>
+			<integer>1</integer>
 		</dict>
 		<key>cail_properties</key>
 		<dict>
@@ -125,6 +125,8 @@
 			<integer>0</integer>
 			<key>CAIL_DisableSAMUPowerGating</key>
 			<integer>0</integer>
+			<key>CAIL_DisableStaticGfxMGPowerGating</key>
+			<integer>0</integer>
 			<key>CAIL_DisableSysClockGating</key>
 			<integer>1</integer>
 			<key>CAIL_EnableLBPWSupport</key>
@@ -134,8 +136,8 @@
 	<dict>
 		<key>CFBundleIdentifier</key>
 		<string>com.apple.kext.AMDRadeonX5000</string>
-		<key>GPUDCCDisplayable</key>
-		<false/>
+		<key>GPUTaskSingleChannel</key>
+		<true/>
 		<key>GPUDebugNullClientMask</key>
 		<integer>0</integer>
 		<key>GpuDebugPolicy</key>
@@ -209,8 +211,6 @@
 		<string>IOAccelerator</string>
 		<key>IOPCIMatch</key>
 		<string>0x15D81002</string>
-		<key>IOPCITunnelCompatible</key>
-		<true/>
 		<key>IOPropertyMatch</key>
 		<dict>
 			<key>LoadAccelerator</key>
@@ -226,11 +226,13 @@
 		<dict>
 			<key>EnableSwVCNFWLoading</key>
 			<integer>0</integer>
+			<key>SMU_DisableMmhubPowerGating</key>
+			<integer>1</integer>
 		</dict>
 		<key>cail_properties</key>
 		<dict>
 			<key>CAIL_AsicRevForRlcFw</key>
-			<integer>161</integer>
+			<integer>177</integer>
 			<key>CAIL_DisableGfxCGPowerGating</key>
 			<integer>1</integer>
 		</dict>
@@ -238,8 +240,8 @@
 	<dict>
 		<key>CFBundleIdentifier</key>
 		<string>com.apple.kext.AMDRadeonX5000</string>
-		<key>GPUDCCDisplayable</key>
-		<false/>
+		<key>GPUTaskSingleChannel</key>
+		<true/>
 		<key>GPUDebugNullClientMask</key>
 		<integer>0</integer>
 		<key>GpuDebugPolicy</key>
@@ -313,8 +315,6 @@
 		<string>IOAccelerator</string>
 		<key>IOPCIMatch</key>
 		<string>0x15E71002 0x164C1002 0x16381002 0x16361002</string>
-		<key>IOPCITunnelCompatible</key>
-		<true/>
 		<key>IOPropertyMatch</key>
 		<dict>
 			<key>LoadAccelerator</key>
@@ -328,14 +328,16 @@
 		<integer>16908288</integer>
 		<key>SWIP_properties</key>
 		<dict>
-			<key>EnableSwVCNFWLoading</key>
-			<integer>0</integer>
 			<key>EnableVCNDPG</key>
 			<integer>1</integer>
 			<key>EnableswGcFwLoading</key>
 			<integer>0</integer>
 			<key>EnableswSdmaFwLoading</key>
 			<integer>0</integer>
+			<key>EnableSwVCNFWLoading</key>
+			<integer>0</integer>
+			<key>SMU_DisableMmhubPowerGating</key>
+			<integer>1</integer>
 		</dict>
 		<key>cail_properties</key>
 		<dict>
@@ -347,6 +349,8 @@
 			<integer>0</integer>
 			<key>CAIL_DisableDynamicGfxMGPowerGating</key>
 			<integer>1</integer>
+			<key>CAIL_DisableGfxCGPowerGating</key>
+			<integer>1</integer>
 			<key>CAIL_DisableGfxClockGating</key>
 			<integer>0</integer>
 			<key>CAIL_DisablePCIConfigAsicReset</key>
@@ -356,6 +360,8 @@
 			<key>CAIL_DisableRlcSmuPGHandshake</key>
 			<integer>0</integer>
 			<key>CAIL_DisableSAMUPowerGating</key>
+			<integer>0</integer>
+			<key>CAIL_DisableStaticGfxMGPowerGating</key>
 			<integer>0</integer>
 			<key>CAIL_DisableSysClockGating</key>
 			<integer>0</integer>
